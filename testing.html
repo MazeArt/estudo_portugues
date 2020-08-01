@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    #MyTable {
+        border-style: solid;
+        border-color: black;
+        border-width: 2px
+    }
+
+    #MyTable td {
+        border-style: solid;
+        border-color: black;
+        border-width: 1px;
+        padding: 3px;
+    }
+
+    .CellWithComment {
+        position: relative;
+    }
+
+    .CellComment {
+        display: none;
+        position: absolute;
+        z-index: 100;
+        border: 1px;
+        background-color: white;
+        border-style: solid;
+        border-width: 1px;
+        border-color: red;
+        padding: 3px;
+        color: red;
+        top: 20px;
+        left: 20px;
+    }
+
+    .CellWithComment:hover span.CellComment {
+        display: block;
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Verbo</th>
+                <th>Pers</th>
+                <th>PRESENTE</th>
+                <th>PRET PERFEITO</th>
+                <th>PRET IMPERFEITO</th>
+                <th>FUTURO DO PRESENTE</th>
+                <th>FUTURO DO PRETERITO</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>ser</td>
+                <td>eu</td>
+                <td class="CellWithComment">
+                    <input type="text" id="ptp_1s" size="10">
+                    <span class="CellComment">Here is a comment</span>
+                  </td>
+
+                <td class="input">
+                    <input type="text" id="ptp_1s" size="10"></td>
+
+
+                <td class="input"><input type="text" id="pti_1s" size="10"></td>
+                <td class="input"><input type="text" id="fps_1s" size="10"></td>
+                <td class="input"><input type="text" id="fpt_1s" size="10"></td>
+            </tr>
+            <tr>
+                <td>ser</td>
+                <td>você / ele / ela</td>
+                <td class="input"><input type="text" id="prs_3s" size="10"></td>
+                <td class="input"><input type="text" id="ptp_3s" size="10"></td>
+                <td class="input"><input type="text" id="pti_3s" size="10"></td>
+                <td class="input"><input type="text" id="fps_3s" size="10"></td>
+                <td class="input"><input type="text" id="fpt_3s" size="10"></td>
+            </tr>
+            <tr>
+                <td>ser</td>
+                <td>nós</td>
+                <td class="input"><input type="text" id="prs_1p" size="10"></td>
+                <td class="input"><input type="text" id="ptp_1p" size="10"></td>
+                <td class="input"><input type="text" id="pti_1p" size="10"></td>
+                <td class="input"><input type="text" id="fps_1p" size="10"></td>
+                <td class="input"><input type="text" id="fpt_1p" size="10"></td>
+            </tr>
+            <tr>
+                <td>ser</td>
+                <td>vocês / eles / elas</td>
+                <td class="input"><input type="text" id="prs_3p" size="10"></td>
+                <td class="input"><input type="text" id="ptp_3p" size="10"></td>
+                <td class="input"><input type="text" id="pti_3p" size="10"></td>
+                <td class="input"><input type="text" id="fps_3p" size="10"></td>
+                <td class="input"><input type="text" id="fpt_3p" size="10"></td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>
