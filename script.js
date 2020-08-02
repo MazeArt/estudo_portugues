@@ -33,13 +33,17 @@ for (var i = 0; i < numRows; i++) {
     var td = document.createElement('td');
 
     if (j > 1) { //tempos cols
-      td.classList.add("input");
+      td.classList.add("CellWithComment");
       var input = document.createElement('input');
+      var span = document.createElement('span')
       input.type = "text";
+      span.classList.add("CellComment0")
       td.appendChild(input);
+      td.appendChild(span);
       tr.appendChild(td);
       input.id=tempCodes[j-2]+'_'+pessoaCodes[i];
       input.size='10';
+      span.id=tempCodes[j-2]+'_'+pessoaCodes[i]+'_a';
       //input.class="search";
       //input.onkeypress='process(event, this)';
       input.onkeypress= new Function("return process(event, this)");
@@ -117,12 +121,18 @@ function process(e,obj) {
     var correctAns=pppp[obj.id] //e.g. obj.id is 'prs_1s'
     var typedAns=obj.value
     if(typedAns==correctAns){
-      //alert("You're Correct : " + typedAns);
-      obj.style.backgroundColor='green';
-
+      obj.style.backgroundColor='#90EE90';
+      document.getElementById(obj.id+"_a").innerHTML='no deberia salir esto'
+      document.getElementById(obj.id+"_a").classList.remove("CellComment1")
+      document.getElementById(obj.id+"_a").classList.add("CellComment0") 
+      
     }else{
-      alert("Wrong! the correct ans is : " + correctAns);
+      //alert("Wrong! the correct ans is : " + correctAns);
       obj.style.backgroundColor='yellow';
+      document.getElementById(obj.id+"_a").innerHTML=correctAns
+     // document.getElementById(obj.id+"_a").style.display="block" // how to change "hover" property here?
+     document.getElementById(obj.id+"_a").classList.remove("CellComment0")
+     document.getElementById(obj.id+"_a").classList.add("CellComment1") // how to change "hover" property here?
     }
     $(this).next().find('input[type=text]').focus()
   }
